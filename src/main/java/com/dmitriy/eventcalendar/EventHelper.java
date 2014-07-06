@@ -2,6 +2,7 @@ package com.dmitriy.eventcalendar;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -13,5 +14,7 @@ public interface EventHelper {
 
     void removeEvent(UUID id);
 
-    void createEvent(String description, String email, Date date);
+    void createEvent(String description, List<String> attenders, Date date);
+
+    void addEvent(Event event);
 }

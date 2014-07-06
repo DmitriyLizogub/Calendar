@@ -2,6 +2,7 @@ package com.dmitriy.eventcalendar;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -22,7 +23,12 @@ public class EventHelperImpl implements EventHelper {
     }
 
     @Override
-    public void createEvent(String description, String email, Date date) {
+    public void createEvent(String description, List<String> attenders, Date date) {
+
+    }
+
+    @Override
+    public void addEvent(Event event) {
 
     }
 }

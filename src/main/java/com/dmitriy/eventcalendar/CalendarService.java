@@ -2,6 +2,7 @@ package com.dmitriy.eventcalendar;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -19,10 +20,15 @@ public class CalendarService {
     }
 
     public void removeEvent(UUID id) {
-
+        eventResource.removeEvent(id);
     }
 
-    public void createEvent(String description, String email, Date date) {
-
+    public void createEvent(String description, List<String> attenders, Date date) {
+        eventResource.createEvent(description, attenders, date);
     }
+
+    public void addEvent(Event event){
+        eventResource.addEvent(event);
+    }
+
 }
