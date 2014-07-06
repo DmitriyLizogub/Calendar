@@ -19,8 +19,8 @@ public class CalendarService {
         return eventResource.findEventById(id);
     }
 
-    public void removeEvent(UUID id) {
-        eventResource.removeEvent(id);
+    public Event removeEvent(UUID id) {
+        return eventResource.removeEvent(id);
     }
 
     public void createEvent(String description, List<String> attenders, Date date) {

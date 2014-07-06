@@ -12,7 +12,7 @@ public interface EventHelper {
 
     Event findEventById(UUID id);
 
-    void removeEvent(UUID id);
+    Event removeEvent(UUID id);
 
     void createEvent(String description, List<String> attenders, Date date);
 

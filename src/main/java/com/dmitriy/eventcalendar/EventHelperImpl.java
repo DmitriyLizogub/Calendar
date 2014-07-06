@@ -18,8 +18,8 @@ public class EventHelperImpl implements EventHelper {
     }
 
     @Override
-    public void removeEvent(UUID id) {
-
+    public Event removeEvent(UUID id) {
+        return dataSource.remove(id);
     }
 
     @Override
