@@ -32,8 +32,36 @@ public class Event {
         return date;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Event)) return false;
 
+        Event event = (Event) o;
 
+        if (attenders != null ? !attenders.equals(event.attenders) : event.attenders != null) return false;
+        if (date != null ? !date.equals(event.date) : event.date != null) return false;
+        if (description != null ? !description.equals(event.description) : event.description != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = description != null ? description.hashCode() : 0;
+        result = 31 * result + (attenders != null ? attenders.hashCode() : 0);
+        result = 31 * result + (date != null ? date.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "description='" + description + '\'' +
+                ", attenders=" + attenders +
+                ", date=" + date +
+                '}';
+    }
 
 
     public static class EventBuilder{

@@ -35,6 +35,7 @@ public class EventHelperImpl implements EventHelper {
     }
 
     public void showCalendar(){
-        System.out.println("Calendar events:  " + dataSource);
+        System.out.println("Calendar events:  " + dataSource.values().toString());
+
     }
 }

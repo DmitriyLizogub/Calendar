@@ -14,8 +14,8 @@ public class Main {
         List<String> attendersList = Arrays.asList(attenders);
 
         List<GregorianCalendar> datesList = new ArrayList<>();
-        for (String description : descriptions) {
-            datesList.add(new GregorianCalendar(2014, (int) (Math.random() * 12), (int) (Math.random() * 30), (int) (Math.random() * 60), (int) (Math.random() * 60)));
+        for (int i = 0; i < descriptionsList.size(); i++) {
+            datesList.add(new GregorianCalendar(2014, (int) ((Math.random() * 120)/10), (int) ((Math.random() * 100)/4), (int) ((Math.random() * 120)/2), (int) ((Math.random() * 120)/2)));
         }
 
         EventHelperImpl eventHelper = new EventHelperImpl();
