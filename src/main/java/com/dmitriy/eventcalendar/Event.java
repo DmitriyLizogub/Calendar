@@ -2,6 +2,7 @@ package com.dmitriy.eventcalendar;
 
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ public class Event {
 
     private final String description;
     private  final List<String> attenders; //user email
-    private final Date date;
+    private final GregorianCalendar date;
 
     private  Event(EventBuilder builder){
         this.description = builder.description;
@@ -27,48 +28,19 @@ public class Event {
         return attenders;
     }
 
-    public Date getDate() {
+    public GregorianCalendar getDate() {
         return date;
     }
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Event)) return false;
 
-        Event event = (Event) o;
-
-        if (attenders != null ? !attenders.equals(event.attenders) : event.attenders != null) return false;
-        if (date != null ? !date.equals(event.date) : event.date != null) return false;
-        if (description != null ? !description.equals(event.description) : event.description != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = description != null ? description.hashCode() : 0;
-        result = 31 * result + (attenders != null ? attenders.hashCode() : 0);
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Event{" +
-                "description='" + description + '\'' +
-                ", attenders=" + attenders +
-                ", date=" + date +
-                '}';
-    }
 
 
     public static class EventBuilder{
 
         private String description;
         private List<String> attenders;
-        private Date date;
+        private GregorianCalendar date;
 
         public EventBuilder(){}
 
@@ -88,7 +60,7 @@ public class Event {
             return this;
         }
 
-        public EventBuilder date(Date date){
+        public EventBuilder date(GregorianCalendar date){
             this.date = date;
             return this;
         }

@@ -1,9 +1,6 @@
 package com.dmitriy.eventcalendar;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Created by dmitriy on 7/6/14.
@@ -14,7 +11,7 @@ public interface EventHelper {
 
     Event removeEvent(UUID id);
 
-    Event createEvent(String description, List<String> attenders, Date date);
+    Event createEvent(String description, List<String> attenders, GregorianCalendar date);
 
     void addEvent(UUID id,Event event);
 }

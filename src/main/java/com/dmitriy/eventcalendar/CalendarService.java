@@ -1,9 +1,6 @@
 package com.dmitriy.eventcalendar;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Created by dmitriy on 7/6/14.
@@ -23,7 +20,7 @@ public class CalendarService {
         return eventResource.removeEvent(id);
     }
 
-    public Event createEvent(String description, List<String> attenders, Date date) {
+    public Event createEvent(String description, List<String> attenders, GregorianCalendar date) {
        return eventResource.createEvent(description, attenders, date);
     }
 
