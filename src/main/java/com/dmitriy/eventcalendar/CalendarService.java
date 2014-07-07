@@ -23,12 +23,12 @@ public class CalendarService {
         return eventResource.removeEvent(id);
     }
 
-    public void createEvent(String description, List<String> attenders, Date date) {
-        eventResource.createEvent(description, attenders, date);
+    public Event createEvent(String description, List<String> attenders, Date date) {
+       return eventResource.createEvent(description, attenders, date);
     }
 
-    public void addEvent(Event event){
-        eventResource.addEvent(event);
+    public void addEvent(UUID id, Event event){
+        eventResource.addEvent(id, event);
     }
 
 }

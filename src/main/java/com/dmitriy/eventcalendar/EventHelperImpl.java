@@ -14,21 +14,27 @@ public class EventHelperImpl implements EventHelper {
 
     @Override
     public Event findEventById(UUID id) {
-        return null;
+        if(dataSource.containsKey(id))
+        {return dataSource.get(id);} else
+            return null;
     }
 
     @Override
     public Event removeEvent(UUID id) {
-        return dataSource.remove(id);
+        if(dataSource.containsKey(id)){
+        return dataSource.remove(id);} else
+            return null;
     }
 
     @Override
-    public void createEvent(String description, List<String> attenders, Date date) {
+    public Event createEvent(String description, List<String> attenders, Date date) {
+        return new Event.EventBuilder().description(description).attenders(attenders).date(date).build();
 
     }
 
     @Override
-    public void addEvent(Event event) {
+    public void addEvent(UUID id, Event event) {
+        dataSource.put(id, event);
 
     }
 }

@@ -14,7 +14,7 @@ public interface EventHelper {
 
     Event removeEvent(UUID id);
 
-    void createEvent(String description, List<String> attenders, Date date);
+    Event createEvent(String description, List<String> attenders, Date date);
 
-    void addEvent(Event event);
+    void addEvent(UUID id,Event event);
 }
