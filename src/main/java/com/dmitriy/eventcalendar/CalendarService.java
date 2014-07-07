@@ -28,4 +28,7 @@ public class CalendarService {
         eventResource.addEvent(id, event);
     }
 
+    public void showCalendar(){
+        eventResource.showCalendar();
+    }
 }

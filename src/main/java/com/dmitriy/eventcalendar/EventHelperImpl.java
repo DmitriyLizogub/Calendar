@@ -32,6 +32,9 @@ public class EventHelperImpl implements EventHelper {
     @Override
     public void addEvent(UUID id, Event event) {
         dataSource.put(id, event);
+    }
 
+    public void showCalendar(){
+        System.out.println("Calendar events:  " + dataSource);
     }
 }
